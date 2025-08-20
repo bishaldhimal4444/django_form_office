@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h1 class="h4 mb-3">Messages</h1>
+
+      {% if contacts %}
+        <div class="table-responsive">
+          <table class="table table-sm align-middle">
+            <thead>
+              <tr>
+                <th>When</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for c in contacts %}
+                <tr>
+                  <td>{{ c.created_at }}</td>
+                  <td>{{ c.name }}</td>
+                  <td>{{ c.email }}</td>
+                  <td style="white-space: pre-wrap">{{ c.message }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% else %}
+        <p class="text-muted">No messages yet.</p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
