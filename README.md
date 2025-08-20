@@ -17,7 +17,7 @@ ssh-add /path/to/your/*.pem
 ```
 <br>
 3. Connect to the bastion host with agent forwarding:
+<br>
 ```
 ssh -A ubuntu@<instance_ip>.compute-1.amazonaws.com
-
 ```
