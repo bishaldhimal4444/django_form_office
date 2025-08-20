@@ -11,9 +11,11 @@ eval "$(ssh-agent -s)"
 ```
 locate your bastion_host pem file: pwd
 ```
+<br>
 ```
 ssh-add /path/to/your/*.pem
 ```
+<br>
 3. Connect to the bastion host with agent forwarding:
 ```
 ssh -A ubuntu@<instance_ip>.compute-1.amazonaws.com
